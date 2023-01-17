@@ -1,4 +1,5 @@
 from tkinter import *
+
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
 RED = "#e7305b"
@@ -10,6 +11,7 @@ SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
 timer = None
+
 # ---------------------------- TIMER RESET ------------------------------- # 
 def reset_timer():
     window.after_cancel(timer)
@@ -18,6 +20,7 @@ def reset_timer():
     checkmarks.config(text="")
     global reps
     reps = 0
+    
 # ---------------------------- TIMER MECHANISM ------------------------------- # 
 def start_timer():
     global reps
@@ -36,6 +39,7 @@ def start_timer():
     else:
         count_down(work_sec)
         timer_label.config(text="Work", fg=GREEN)
+        
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def count_down(count):
     count_min = count // 60
@@ -58,7 +62,6 @@ def count_down(count):
         for _ in range(work_sessions):
             mark += "✔"
         checkmarks.config(text=mark)
-
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
